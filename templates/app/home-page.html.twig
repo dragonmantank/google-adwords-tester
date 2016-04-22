@@ -1,0 +1,35 @@
+{% extends '@layout/default.html.twig' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    <style>
+        input {width: 100%}
+        textarea {width: 100%}
+    </style>
+    <form method="post">
+        <div id="developer-info">
+            <h1>API Information</h1>
+            Developer Token: <input type="text" name="developer_token" value="{{ developer_token }}"><br/>
+            Client ID: <input type="text" name="client_id" value="{{ client_id }}"><br/>
+            Client Secret: <input type="text" name="client_secret" value="{{ client_secret }}"><br/>
+            Refresh Token: <input type="text" name="refresh_token" value="{{ refresh_token }}"><br/>
+            Customer AdWords ID: <input type="text" name="client_customer_id" value="{{ client_customer_id }}"><br/>
+        </div>
+
+        <div class="report-info">
+            <h1>Report Information</h1>
+            Service: <input type="text" name="service" value="{{ service }}"><br/>
+            Report Type: <input type="text" name="report_type" value="{{ report_type }}"><br/>
+            Fields: <input type="text" name="fields" value="{{ fields }}"><br/>
+            Predicate: <textarea name="predicate">{{ predicate }}</textarea><br/>
+            Start Date: <input type="text" name="start_date" value="{{ start_date }}"><br/>
+            End Date: <input type="text" name="end_date" value="{{ end_date }}"><br/>
+            Output Type: <input type="text" name="output" value="{{ output }}"><br/>
+        </div>
+
+        <input type="submit">
+    </form>
+
+    <pre>{{ report }}</pre>
+{% endblock %}
